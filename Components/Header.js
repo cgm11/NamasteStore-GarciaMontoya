@@ -1,43 +1,27 @@
-import { StyleSheet, TextInput, View } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { colors } from '../Styles/Colors'
 
-import ButtonCustom from "../Components/Button";
-import { colors } from "../Styles/Colors";
-
-const Header = ({input, setInput, handleAdd}) => {
-  
-
+const Header = ({title = "E-commerce"}) => {
   return (
-    <View style={styles.topContainer}>
-      <TextInput
-        style={styles.input}
-        placeholder="Add todo"
-        onChangeText={setInput}
-        value={input}
-      />
-      <ButtonCustom onPress={handleAdd} />
+    <View style={styles.container}>
+      <Text style={styles.text}>{title}</Text>
     </View>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
 
 const styles = StyleSheet.create({
-  topContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 10,
-    flex: 0.2,
-  },
-  input: {
-    borderRadius: 8,
-    borderWidth: 2,
-    width: 200,
-    marginRight: 10,
-    paddingHorizontal: 8,
-    fontSize: 18,
-    height: 35,
-    backgroundColor: colors.grey,
-  },
-});
+    container: {
+        backgroundColor: colors.regularBlue,
+        height: 80,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    text: {
+        fontSize: 20,
+        fontFamily: "LatoRegular"
+    }
+})
